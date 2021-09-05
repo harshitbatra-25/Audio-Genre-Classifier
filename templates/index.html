@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Classifier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
+<body>
+
+<div class="jumbotron jumbotron  " style="background-color: #222222; text-align: center; border-color: #2b669a;color: gainsboro">
+    <div class="container" >
+        <h1 id="hea">Audio Classifier</h1>
+        <P class="lead py-2"> Classify Between : Rock & Hip-Hop</P>
+
+
+    </div>
+</div></div><section>
+<div align="center" >
+<div class="col-lg-10" style="background-color: #9acfea;height:900px;width: 600px">
+
+<br>
+
+    <h2 >Audio Paramters</h2><br>
+
+    <form method="POST" action="/predict">
+        <div class="form-group">
+                    <label for="acousticness">Acousticness</label>
+                    <input type="acousticness" class="form-control" style="width:470px;" id="acousticness" name="acousticness" placeholder="Type: 0.992736"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="danceability">Danceability</label>
+                    <input type="danceability" class="form-control" style="width:470px;" id="danceability" name="danceability" placeholder="Type: 0..304324"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="energy">Energy</label>
+                    <input type="energy" class="form-control" style="width:470px;" id="energy" name="energy" placeholder="Type: 0.854678"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="instrumentalness">Instrumentalness</label>
+                    <input type="instrumentalness" class="form-control" style="width:470px;" id="instrumentalness" name="instrumentalness" placeholder="Type: 0.9927492521"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="liveness">Liveness</label>
+                    <input type="liveness" class="form-control" style="width:470px;" id="liveness" name="liveness" placeholder="Type: 0.242765"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="speechiness">Speechiness</label>
+                    <input type="speechiness" class="form-control" style="width:470px;" id="speechiness" name="speechiness" placeholder="Type: 0.03497"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="tempo">Tempo</label>
+                    <input type="tempo" class="form-control" style="width:470px;" id="tempo" name="tempo" placeholder="Type: 85.082"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="valence">Valence</label>
+                    <input type="valence" class="form-control" style="width:470px;" id="valence" name="valence" placeholder="Type: 0.074535"
+                        required>
+                </div>
+        <br>
+        <button class="btn btn-default" type="submit">Predict</button>
+    </form>
+</div>
+</div><div class="jumbotron jumbotron " id="prev" style="background-color:#393234;color:gainsboro">
+    <br>
+    <h2 class="display-6 text-center">Using these Parameters We Predict that this is :</h2>
+    <h1 class="display-6 text-center" style="color: #2aabd2"> {{ pred_name }}</h1>
+</div>
+</section>
+
+
+
+</body>
+</html>
